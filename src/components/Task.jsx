@@ -10,14 +10,23 @@ import { TaskContext } from '../Context/TaskContext';
 export default function Task({ task: { description, completed, id } }) {
   const { tasks, setTasks } = useContext(TaskContext);
 
-  const handleClick = ({ target: { id: _id } }) => {
-    const newTasks = [...tasks];
-    newTasks.forEach((t) => {
-      if (t.id === _id) {
-        t.completed = !completed;
-      }
-    });
-    setTasks(newTasks);
+  const handleClick = ({ target: { id: _id, name: action } }) => {
+    const buttons = {
+      done: () => {
+        const newTasks = [...tasks];
+        newTasks.forEach((t) => {
+          if (t.id === _id) {
+            t.completed = !completed;
+          }
+        });
+        setTasks(newTasks);
+      },
+      delete: () => {
+        const newTasks = tasks.filter((t) => t.id !== id);
+        setTasks(newTasks);
+      },
+    };
+    buttons[action]();
   };
 
   return (

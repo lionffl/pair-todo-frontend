@@ -22,7 +22,7 @@ export default function TaskMenu() {
       const newTasks = [...tasks];
       const nextIndex = +tasks[tasks.length - 1].id + 1;
       const newTask = {
-        id: nextIndex,
+        id: nextIndex.toString(),
         description: inputTaskValue,
         completed: false,
       };
