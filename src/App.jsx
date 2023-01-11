@@ -1,32 +1,19 @@
 import './App.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import TaskMenu from './components/TaskMenu';
 import Task from './components/Task';
-
-const tasks = [
-  {
-    id: '1',
-    title: 'Task 1',
-    description: 'Task 1 description',
-    completed: false,
-  },
-  {
-    id: '2',
-    title: 'Task 2',
-    description: 'Task 2 description',
-    completed: false,
-  },
-];
+import { TaskContext } from './Context/TaskContext';
 
 function App() {
+  const { tasks } = useContext(TaskContext);
   return (
     <div className="App">
       <TaskMenu />
       {
-        tasks.map((task) => (
-          <Task task={task} key={task.id} />
-        ))
-      }
+          tasks.map((task) => (
+            <Task task={task} key={task.id} />
+          ))
+        }
     </div>
   );
 }
