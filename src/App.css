@@ -12,13 +12,6 @@ input[type=text] {
   /* border: 1px solid red */
 }
 
-.task-container {
-  display: flex;
-  justify-content: space-between;
-  /* border: 1px solid orange; */
-  margin: 0 10px
-}
-
 .input-task-container {
   display: flex;
   width: 60%;
@@ -27,7 +20,7 @@ input[type=text] {
   justify-content: right;
 }
 
-.btn-task-container {
+.btn-task-add-container {
   display: flex;
   width: 30%;
   /* border: 1px solid yellow; */
@@ -51,14 +44,18 @@ input[type=text] {
   color: white;
 }
 
+.btn-del {
+  background-color: #FF5733 ;
+  color: white;
+}
+
 .btn-task {
   align-self: center;
-  background-color: #4CAF50;
   color: white;
   height: 35px;
   padding: 10px;
   font-size: small;
-  margin-left: 5em;
+  margin-left: 2em;
 }
 
 .task {
@@ -71,9 +68,21 @@ input[type=text] {
 
 .alert {
   padding: 10px;
-  background-color: #89CFF0; /* Red */
+  background-color: #89CFF0;
   color: white;
   margin-bottom: 15px;
+}
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid orange; */
+  margin: 0 10px
+}
+.btn-container {
+  display: flex;
+  /* border: 1px solid red; */
+  /* justify-content: center; */
 }
 
 .App {

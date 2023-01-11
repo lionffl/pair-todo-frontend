@@ -42,7 +42,7 @@ export default function TaskMenu() {
           value={inputTaskValue}
         />
       </div>
-      <div className="btn-task-container">
+      <div className="btn-task-add-container">
         <button
           type="button"
           className="btn btn-add"
