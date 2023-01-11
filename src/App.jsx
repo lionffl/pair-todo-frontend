@@ -1,27 +1,15 @@
 import './App.css';
-import React, { useContext } from 'react';
+import React from 'react';
 import TaskMenu from './components/TaskMenu';
-import Task from './components/Task';
-import { TaskContext } from './Context/TaskContext';
+import Flash from './components/Flash';
+import TasksList from './components/TasksList';
 
 function App() {
-  const {
-    tasks, hasFlash, flashMsg,
-  } = useContext(TaskContext);
   return (
     <div className="App">
-      <div
-        className="alert"
-        hidden={!hasFlash}
-      >
-        <p className="flash-msg">{flashMsg}</p>
-      </div>
+      <Flash />
       <TaskMenu />
-      {
-          tasks.map((task) => (
-            <Task task={task} key={task.id} />
-          ))
-        }
+      <TasksList />
     </div>
   );
 }

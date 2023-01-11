@@ -1,10 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../Context/TaskContext';
 
-// id: '1',
-// description: 'Task 1 description',
-// completed: false,
-
 export default function TaskMenu() {
   const [inputTaskValue, setInputTaskValue] = useState('');
 

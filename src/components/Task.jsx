@@ -3,10 +3,6 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { TaskContext } from '../Context/TaskContext';
 
-// id: '1',
-// description: 'Task 1 description',
-// completed: false,
-
 export default function Task({ task: { description, completed, id } }) {
   const { tasks, setTasks } = useContext(TaskContext);
 
