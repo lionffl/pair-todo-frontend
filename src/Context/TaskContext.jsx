@@ -18,14 +18,24 @@ const seed = [
 // eslint-disable-next-line react/prop-types
 export default function TaskContextProvider({ children }) {
   const [tasks, setTasks] = React.useState([]);
-
+  const [hasFlash, setFlash] = React.useState(false);
+  const [flashMsg, setFlashMsg] = React.useState('');
   React.useEffect(() => {
     setTasks(seed);
   }, []);
 
+  const flash = (message) => {
+    setFlash(true);
+    setFlashMsg(message);
+  };
+
   const globalState = React.useMemo(() => ({
     tasks,
     setTasks,
+    hasFlash,
+    setFlash,
+    flash,
+    flashMsg,
   }));
 
   return (

@@ -5,9 +5,17 @@ import Task from './components/Task';
 import { TaskContext } from './Context/TaskContext';
 
 function App() {
-  const { tasks } = useContext(TaskContext);
+  const {
+    tasks, hasFlash, flashMsg,
+  } = useContext(TaskContext);
   return (
     <div className="App">
+      <div
+        className="alert"
+        hidden={!hasFlash}
+      >
+        <p className="flash-msg">{flashMsg}</p>
+      </div>
       <TaskMenu />
       {
           tasks.map((task) => (

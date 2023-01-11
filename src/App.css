@@ -14,7 +14,9 @@ input[type=text] {
 
 .task-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  /* border: 1px solid orange; */
+  margin: 0 10px
 }
 
 .input-task-container {
@@ -63,8 +65,22 @@ input[type=text] {
   color: white;
 }
 
+.flash-msg {
+  color: white;
+}
+
+.alert {
+  padding: 10px;
+  background-color: #89CFF0; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   background-color: #282c34;
+  overflow: scroll;
 }
