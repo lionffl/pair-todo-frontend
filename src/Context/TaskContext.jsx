@@ -20,9 +20,22 @@ export default function TaskContextProvider({ children }) {
   const [tasks, setTasks] = React.useState([]);
   const [hasFlash, setFlash] = React.useState(false);
   const [flashMsg, setFlashMsg] = React.useState('');
+
   React.useEffect(() => {
     setTasks(seed);
   }, []);
+
+  React.useEffect(() => {
+    let timer;
+    if (hasFlash) {
+      timer = setTimeout(() => {
+        setFlash(false);
+      }, 3000);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  });
 
   const flash = (message) => {
     setFlash(true);

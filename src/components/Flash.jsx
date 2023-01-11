@@ -3,8 +3,8 @@ import { TaskContext } from '../Context/TaskContext';
 
 export default function Flash() {
   const { hasFlash, flashMsg } = React.useContext(TaskContext);
-  return (
 
+  return (
     <div
       className="alert"
       hidden={!hasFlash}
