@@ -1,5 +1,5 @@
 const endpoint = {
-  tasks: 'https://pair-todo-api.fly.dev/tasks',
+  tasks: process.env.REACT_APP_NAME,
 };
 
 export default endpoint;
