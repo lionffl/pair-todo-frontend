@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
 import React from 'react';
-import axios from 'axios';
+import endpoint from '../helpers/endpoints';
+import fetchTasks from '../helpers/fetch';
 
 export const TaskContext = React.createContext(null);
 
@@ -11,9 +11,11 @@ export default function TaskContextProvider({ children }) {
   const [flashMsg, setFlashMsg] = React.useState('');
 
   React.useEffect(() => {
-    axios.get('http://localhost:3000/tasks')
-      .then((res) => setTasks(res.data))
-      .catch((err) => console.log(err.message));
+    const getTasks = async () => {
+      const data = await fetchTasks('get', endpoint.tasks);
+      setTasks(data);
+    };
+    getTasks();
   }, []);
 
   React.useEffect(() => {

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../Context/TaskContext';
+import endpoint from '../helpers/endpoints';
 
 export default function TaskMenu() {
   const [inputTaskValue, setInputTaskValue] = useState('');
@@ -15,7 +16,7 @@ export default function TaskMenu() {
   const handleClick = () => {
     if (inputTaskValue) {
       const newTask = { description: inputTaskValue, completed: false };
-      axios.post('http://localhost:3000/tasks', newTask)
+      axios.post(endpoint.tasks, newTask)
         .then((response) => setTasks(response.data));
       flash('New task added!');
     } else flash('Please, provide a task description');

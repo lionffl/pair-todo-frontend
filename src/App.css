@@ -9,13 +9,11 @@ input[type=text] {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  /* border: 1px solid red */
 }
 
 .input-task-container {
   display: flex;
   width: 60%;
-  /* border: 1px solid blue; */
   align-items: center;
   justify-content: right;
 }
@@ -23,7 +21,6 @@ input[type=text] {
 .btn-task-add-container {
   display: flex;
   width: 30%;
-  /* border: 1px solid yellow; */
   align-items: center;
   justify-content: left;
   margin-right: 10px;
@@ -81,13 +78,10 @@ input[type=text] {
 .task-container {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid orange; */
   margin: 0 10px
 }
 .btn-container {
   display: flex;
-  /* border: 1px solid red; */
-  /* justify-content: center; */
 }
 
 .App {

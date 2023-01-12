@@ -1,21 +1,27 @@
 /* eslint-disable no-param-reassign */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import { TaskContext } from '../Context/TaskContext';
+import endpoint from '../helpers/endpoints';
+import fetchTasks from '../helpers/fetch';
 
 export default function Task({ task: { description, completed, id } }) {
   const { tasks, setTasks } = useContext(TaskContext);
 
   const handleClick = ({ target: { id: _id, name: action } }) => {
+    const url = `${endpoint.tasks}/${_id}`;
     const buttons = {
-      done: () => {
-        const task = tasks.find((t) => t.id === +_id);
+      done: async () => {
+        let task = tasks.find((t) => t.id === +_id);
         const { id: _, ...rest } = task;
-        const updatedTask = { rest, completed: !completed };
-        axios.patch(`http://localhost:3000/tasks/${_id}`, updatedTask).then((response) => setTasks(response.data));
+        task = { rest, completed: !completed };
+        const updatedTasks = await fetchTasks('patch', url, task);
+        setTasks(updatedTasks);
       },
-      delete: () => axios.delete(`http://localhost:3000/tasks/${_id}`).then((response) => setTasks(response.data)),
+      delete: async () => {
+        const updatedTasks = await fetchTasks('delete', url);
+        setTasks(updatedTasks);
+      },
     };
     buttons[action]();
   };
@@ -37,16 +43,6 @@ export default function Task({ task: { description, completed, id } }) {
           id={id}
         >
           {completed ? 'Unmark' : 'Done'}
-
-        </button>
-        <button
-          type="button"
-          className="btn btn-task btn-edit"
-          name="edit"
-          onClick={handleClick}
-          id={id}
-        >
-          Edit
 
         </button>
         <button
