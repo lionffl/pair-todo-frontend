@@ -1,5 +1,5 @@
 const endpoint = {
-  tasks: process.env.REACT_APP_NAME,
+  tasks: process.env.REACT_APP_BACKEND,
 };
 
 export default endpoint;
