@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { TaskContext } from '../Context/TaskContext';
 
 export default function Task({ task: { description, completed, id } }) {
@@ -9,18 +10,12 @@ export default function Task({ task: { description, completed, id } }) {
   const handleClick = ({ target: { id: _id, name: action } }) => {
     const buttons = {
       done: () => {
-        const newTasks = [...tasks];
-        newTasks.forEach((t) => {
-          if (t.id === _id) {
-            t.completed = !completed;
-          }
-        });
-        setTasks(newTasks);
+        const task = tasks.find((t) => t.id === +_id);
+        const { id: _, ...rest } = task;
+        const updatedTask = { rest, completed: !completed };
+        axios.patch(`http://localhost:3000/tasks/${_id}`, updatedTask).then((response) => setTasks(response.data));
       },
-      delete: () => {
-        const newTasks = tasks.filter((t) => t.id !== id);
-        setTasks(newTasks);
-      },
+      delete: () => axios.delete(`http://localhost:3000/tasks/${_id}`).then((response) => setTasks(response.data)),
     };
     buttons[action]();
   };
@@ -46,6 +41,16 @@ export default function Task({ task: { description, completed, id } }) {
         </button>
         <button
           type="button"
+          className="btn btn-task btn-edit"
+          name="edit"
+          onClick={handleClick}
+          id={id}
+        >
+          Edit
+
+        </button>
+        <button
+          type="button"
           className="btn btn-task btn-del"
           name="delete"
           onClick={handleClick}
@@ -63,6 +68,6 @@ Task.propTypes = {
   task: PropTypes.shape({
     description: PropTypes.string,
     completed: PropTypes.bool,
-    id: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
 };

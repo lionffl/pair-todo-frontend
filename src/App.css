@@ -49,13 +49,18 @@ input[type=text] {
   color: white;
 }
 
+.btn-edit {
+  background-color: #5F9EA0;
+  color: white;
+}
+
 .btn-task {
   align-self: center;
   color: white;
   height: 35px;
   padding: 10px;
   font-size: small;
-  margin-left: 2em;
+  margin-left: 0.5em;
 }
 
 .task {

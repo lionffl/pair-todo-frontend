@@ -5,12 +5,13 @@ import { TaskContext } from '../Context/TaskContext';
 export default function TasksList() {
   const { tasks } = useContext(TaskContext);
   return (
-    <>
+    <div>
       {
-      tasks.map((task) => (
-        <Task key={task.id} task={task} />
-      ))
+      tasks
+        ? tasks.map((task) => (
+          <Task key={task.id} task={task} />
+        )) : null
     }
-    </>
+    </div>
   );
 }

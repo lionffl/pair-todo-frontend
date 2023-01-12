@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../Context/TaskContext';
 
@@ -5,25 +6,18 @@ export default function TaskMenu() {
   const [inputTaskValue, setInputTaskValue] = useState('');
 
   const {
-    tasks,
-    setTasks,
     flash,
-    setFlash,
+    setTasks,
   } = useContext(TaskContext);
 
   const handleChange = (event) => setInputTaskValue(event.target.value);
 
   const handleClick = () => {
     if (inputTaskValue) {
-      const newTasks = [...tasks];
-      const nextIndex = +tasks[tasks.length - 1].id + 1;
-      const newTask = {
-        id: nextIndex.toString(),
-        description: inputTaskValue,
-        completed: false,
-      };
-      setTasks([...newTasks, newTask]);
-      setFlash(false);
+      const newTask = { description: inputTaskValue, completed: false };
+      axios.post('http://localhost:3000/tasks', newTask)
+        .then((response) => setTasks(response.data));
+      flash('New task added!');
     } else flash('Please, provide a task description');
   };
 

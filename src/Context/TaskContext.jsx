@@ -1,19 +1,8 @@
+/* eslint-disable no-console */
 import React from 'react';
+import axios from 'axios';
 
 export const TaskContext = React.createContext(null);
-
-const seed = [
-  {
-    id: '1',
-    description: 'Task 1 description',
-    completed: false,
-  },
-  {
-    id: '2',
-    description: 'Task 2 description',
-    completed: false,
-  },
-];
 
 // eslint-disable-next-line react/prop-types
 export default function TaskContextProvider({ children }) {
@@ -22,7 +11,9 @@ export default function TaskContextProvider({ children }) {
   const [flashMsg, setFlashMsg] = React.useState('');
 
   React.useEffect(() => {
-    setTasks(seed);
+    axios.get('http://localhost:3000/tasks')
+      .then((res) => setTasks(res.data))
+      .catch((err) => console.log(err.message));
   }, []);
 
   React.useEffect(() => {
