@@ -1,5 +1,5 @@
 const endpoint = {
-  tasks: 'http://localhost:3000/tasks',
+  tasks: 'https://pair-todo-api.fly.dev/tasks',
 };
 
 export default endpoint;
