@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { TaskContext } from '../Context/TaskContext';
+import { TaskContext } from '../context/TaskContext';
 import endpoint from '../helpers/endpoints';
 import fetchTasks from '../helpers/fetch';
 
