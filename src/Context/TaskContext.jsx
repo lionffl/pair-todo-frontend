@@ -16,6 +16,8 @@ export default function TaskContextProvider({ children }) {
       setTasks(data);
     };
     getTasks();
+    const interval = setInterval(getTasks, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   React.useEffect(() => {

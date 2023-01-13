@@ -2,15 +2,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import TaskContextProvider from './Context/TaskContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TaskContextProvider>
-      <App />
-    </TaskContextProvider>
+    <BrowserRouter>
+      <TaskContextProvider>
+        <App />
+      </TaskContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
 

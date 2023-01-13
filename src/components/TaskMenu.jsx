@@ -18,7 +18,6 @@ export default function TaskMenu() {
       const newTask = { description: inputTaskValue, completed: false };
       const data = await fetchTasks('post', endpoint.tasks, newTask);
       setTasks(data);
-      if (data) flash('New task added!');
     } else flash('Please, provide a task description');
   };
 
