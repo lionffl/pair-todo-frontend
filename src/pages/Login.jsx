@@ -1,25 +1,38 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const navigate = useNavigate();
+  const navToTasks = useNavigate();
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="auth-container">
+      <h1>Sign in</h1>
+      <fieldset>
+        <input
+          placeholder="Login"
+          type="text"
+        />
+        <input
+          placeholder="Password"
+          type="password"
+        />
+        <p className="login-new-user">
+          New user?
+          {' '}
+          <Link to="/signup">Sign up</Link>
+        </p>
+      </fieldset>
       <button
+        className="btn btn-login"
         type="button"
-        onClick={() => navigate('/tasks')}
+        onClick={() => navToTasks('/tasks')}
       >
-        Go to Tasks
-
+        Sign in
       </button>
-      <button
-        type="button"
-        onClick={() => navigate('/register')}
-      >
-        Go to Register
-
-      </button>
+      <p className="forget">
+        Forgot your password?
+        {' '}
+        <Link to="/recover">Recover</Link>
+      </p>
     </div>
   );
 }
