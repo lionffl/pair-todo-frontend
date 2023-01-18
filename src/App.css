@@ -18,7 +18,6 @@ input[type=text], input[type=password] {
 }
 
 .login-new-user, a {
-  /* font-size: small; */
   font-style: italic;
   color: antiquewhite;
   align-self: center;
@@ -59,7 +58,7 @@ input[type=text], input[type=password] {
 
 .btn-login {
   background-color: #053e57;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 .btn-add {
