@@ -1,15 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
+import { FlashContext } from '../context/FlashContext';
 import endpoint from '../helpers/endpoints';
-import fetchTasks from '../helpers/fetch';
+import { fetchTasks } from '../helpers/fetch';
 
 export default function TaskMenu() {
   const [inputTaskValue, setInputTaskValue] = useState('');
 
-  const {
-    flash,
-    setTasks,
-  } = useContext(TaskContext);
+  const { setTasks } = useContext(TaskContext);
+  const { flash } = useContext(FlashContext);
 
   const handleChange = (event) => setInputTaskValue(event.target.value);
 

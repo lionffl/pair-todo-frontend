@@ -5,14 +5,20 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import TaskContextProvider from './context/TaskContext';
+import FlashContextProvider from './context/FlashContext';
+import AuthContextProvider from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <TaskContextProvider>
-        <App />
-      </TaskContextProvider>
+      <AuthContextProvider>
+        <FlashContextProvider>
+          <TaskContextProvider>
+            <App />
+          </TaskContextProvider>
+        </FlashContextProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

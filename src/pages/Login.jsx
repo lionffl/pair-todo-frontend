@@ -6,7 +6,10 @@ export default function Login() {
   return (
     <div className="auth-container">
       <h1>Sign in</h1>
+      <br />
+      <br />
       <fieldset>
+        <legend>Credentials</legend>
         <input
           placeholder="Login"
           type="text"
@@ -15,6 +18,7 @@ export default function Login() {
           placeholder="Password"
           type="password"
         />
+        <br />
         <p className="login-new-user">
           New user?
           {' '}

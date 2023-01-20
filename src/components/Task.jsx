@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { TaskContext } from '../context/TaskContext';
 import endpoint from '../helpers/endpoints';
-import fetchTasks from '../helpers/fetch';
+import { fetchTasks } from '../helpers/fetch';
 
 export default function Task({ task: { description, completed, id } }) {
   const { tasks, setTasks } = useContext(TaskContext);
