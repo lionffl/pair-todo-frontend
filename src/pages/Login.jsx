@@ -71,6 +71,7 @@ export default function Login() {
         <button
           className="btn btn-login"
           type="submit"
+          disabled={!(password && username)}
         >
           Sign in
         </button>

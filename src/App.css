@@ -61,6 +61,11 @@ input[type=text], input[type=password] {
   margin-top: 1.5em;
 }
 
+.btn-login:disabled {
+  color: grey;
+  transition: 1.5s;
+}
+
 .btn-logout {
   background-color: #5F9EA0;
 }

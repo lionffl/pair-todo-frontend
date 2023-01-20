@@ -16,7 +16,7 @@ export default function Register() {
           type="password"
         />
         <input
-          placeholder="Confirm password"
+          placeholder="Password confirmation"
           type="password"
         />
       </fieldset>
