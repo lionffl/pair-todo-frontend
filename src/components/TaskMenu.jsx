@@ -31,7 +31,7 @@ export default function TaskMenu() {
           value={inputTaskValue}
         />
       </div>
-      <div className="btn-task-add-container">
+      <div className="btn-small-add-container">
         <button
           type="button"
           className="btn btn-add"

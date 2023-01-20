@@ -19,7 +19,7 @@ export default function Nav({ user }) {
         !
       </span>
       <button
-        className="btn btn-edit btn-task"
+        className="btn btn-logout btn-small"
         onClick={handleClick}
         type="button"
       >

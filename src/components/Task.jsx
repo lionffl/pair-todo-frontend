@@ -37,7 +37,7 @@ export default function Task({ task: { description, completed, id } }) {
       <div className="btn-container">
         <button
           type="button"
-          className="btn btn-task btn-add"
+          className="btn btn-small btn-add"
           name="done"
           onClick={handleClick}
           id={id}
@@ -47,7 +47,7 @@ export default function Task({ task: { description, completed, id } }) {
         </button>
         <button
           type="button"
-          className="btn btn-task btn-del"
+          className="btn btn-small btn-del"
           name="delete"
           onClick={handleClick}
           id={id}
