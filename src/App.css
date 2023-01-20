@@ -95,6 +95,14 @@ input[type=text], input[type=password] {
   justify-content: space-between;
   margin: 0 10px
 }
+
+.nav-container {
+  display: flex;
+  padding: 15px 0;
+  justify-content: space-between;
+  margin: 0 10px
+}
+
 .btn-container {
   display: flex;
 }
