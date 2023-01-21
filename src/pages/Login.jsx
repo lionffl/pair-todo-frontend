@@ -31,7 +31,7 @@ export default function Login() {
 
     const data = await fetchUser('post', endpoint.auth.login, payload);
     if (data.login) {
-      setUser(data);
+      setUser({ id: data.id, username: data.username });
       navigate('/tasks');
     } else {
       flash(data.message);
@@ -53,6 +53,7 @@ export default function Login() {
             onChange={handleChange}
             name="username"
             type="text"
+            autoComplete="off"
           />
           <input
             placeholder="Password"

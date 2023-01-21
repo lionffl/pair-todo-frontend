@@ -1,6 +1,6 @@
 const endpoint = {
   tasks: process.env.REACT_APP_BACKEND_TASK,
-  register: process.env.REACT_APP_REGISTER,
+  register: process.env.REACT_APP_BACKEND_REGISTER,
   auth: {
     loggedIn: process.env.REACT_APP_BACKEND_LOGGED,
     login: process.env.REACT_APP_BACKEND_LOGIN,
