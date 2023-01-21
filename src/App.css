@@ -1,5 +1,5 @@
-input[type=text] {
-  width: 80%;
+input[type=text], input[type=password] {
+  width: 100%;
   padding: 12px 20px;
   margin: 10px;
   box-sizing: border-box;
@@ -11,6 +11,24 @@ input[type=text] {
   flex-wrap: wrap;
 }
 
+.auth-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-new-user, a {
+  font-style: italic;
+  color: antiquewhite;
+  align-self: center;
+}
+
+.forget {
+  margin-top: 2em;
+  font-size: small;
+  font-style: italic;
+}
+
 .input-task-container {
   display: flex;
   width: 60%;
@@ -18,7 +36,7 @@ input[type=text] {
   justify-content: right;
 }
 
-.btn-task-add-container {
+.btn-small-add-container {
   display: flex;
   width: 30%;
   align-items: center;
@@ -28,51 +46,53 @@ input[type=text] {
 
 .btn {
   border: none;
-  color: #4CAF50;
+  color: white;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
   margin-left: 5px;
   transition-duration: 0.4s;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.btn-login {
+  background-color: #053e57;
+  margin-top: 1.5em;
+}
+
+.btn-login:disabled {
+  color: grey;
+  transition: 1.5s;
+}
+
+.btn-logout {
+  background-color: #5F9EA0;
 }
 
 .btn-add {
   background-color: #4CAF50;
-  color: white;
+  height: 40px;
+  font-size: small;
 }
 
 .btn-del {
   background-color: #FF5733 ;
-  color: white;
 }
 
-.btn-edit {
-  background-color: #5F9EA0;
-  color: white;
-}
-
-.btn-task {
+.btn-small {
   align-self: center;
-  color: white;
   height: 35px;
   padding: 10px;
   font-size: small;
   margin-left: 0.5em;
 }
 
-.task {
-  color: white;
-}
-
-.flash-msg {
-  color: white;
-}
-
 .alert {
   padding: 10px;
-  background-color: #89CFF0;
-  color: white;
+  background-color: #053e57;
   margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .task-container {
@@ -80,6 +100,14 @@ input[type=text] {
   justify-content: space-between;
   margin: 0 10px
 }
+
+.nav-container {
+  display: flex;
+  padding: 15px 0;
+  justify-content: space-between;
+  margin: 0 10px
+}
+
 .btn-container {
   display: flex;
 }
@@ -87,8 +115,14 @@ input[type=text] {
 .App {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background-color: #282c34;
+  width: 95vw;
+  height: 95vh;
   overflow: scroll;
+  margin: 0.5em;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
 }

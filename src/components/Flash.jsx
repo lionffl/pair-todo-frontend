@@ -1,8 +1,8 @@
 import React from 'react';
-import { TaskContext } from '../Context/TaskContext';
+import { FlashContext } from '../context/FlashContext';
 
 export default function Flash() {
-  const { hasFlash, flashMsg } = React.useContext(TaskContext);
+  const { hasFlash, flashMsg } = React.useContext(FlashContext);
 
   return (
     <div

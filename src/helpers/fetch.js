@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const fetchTasks = async (method, url, _payload) => {
+export const fetchTasks = async (method, url, _payload) => {
   try {
     const tasks = await axios({
       method,
       url,
       data: _payload,
+      withCredentials: true,
     });
     return tasks.data;
   } catch (err) {
@@ -13,4 +14,16 @@ const fetchTasks = async (method, url, _payload) => {
   }
 };
 
-export default fetchTasks;
+export const fetchUser = async (method, url, _payload) => {
+  try {
+    const user = await axios({
+      method,
+      url,
+      data: _payload,
+      withCredentials: true,
+    });
+    return user.data;
+  } catch (err) {
+    throw new Error(err);
+  }
+};

@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { TaskContext } from '../Context/TaskContext';
+import { TaskContext } from '../context/TaskContext';
 import endpoint from '../helpers/endpoints';
-import fetchTasks from '../helpers/fetch';
+import { fetchTasks } from '../helpers/fetch';
 
 export default function Task({ task: { description, completed, id } }) {
   const { tasks, setTasks } = useContext(TaskContext);
@@ -37,7 +37,7 @@ export default function Task({ task: { description, completed, id } }) {
       <div className="btn-container">
         <button
           type="button"
-          className="btn btn-task btn-add"
+          className="btn btn-small btn-add"
           name="done"
           onClick={handleClick}
           id={id}
@@ -47,7 +47,7 @@ export default function Task({ task: { description, completed, id } }) {
         </button>
         <button
           type="button"
-          className="btn btn-task btn-del"
+          className="btn btn-small btn-del"
           name="delete"
           onClick={handleClick}
           id={id}
