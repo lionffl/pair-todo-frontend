@@ -1,6 +1,6 @@
 # Pair Todo - Frontend
 
-This project is as frontend application of a simple todo list. In order to work properly, this application needs a web server and a database. [Here](https://github.com/lionffl/pair-todo-frontend) you can find a repository with a Rails API ready to work as backend.
+This project is as frontend application of a simple todo list. In order to work properly, this application needs a web server and a database. [Here](https://github.com/lionffl/pair-todo-backend) you can find a repository with a Rails API ready to work as backend.
 
 ## Basic instructions
 
