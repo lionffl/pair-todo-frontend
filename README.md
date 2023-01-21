@@ -12,7 +12,7 @@ This project is as frontend application of a simple todo list. In order to work 
 
 4) Run: `npm start`
 
-React app should be now running at 3001 (default port in .env.example)
+React app should be now running at http://localhost:3001 (default port in .env.example)
 
 ## Contributing
 
