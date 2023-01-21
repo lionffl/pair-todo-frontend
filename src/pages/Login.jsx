@@ -76,11 +76,11 @@ export default function Login() {
         >
           Sign in
         </button>
-        <p className="forget">
+        {/* <p className="forget">
           Forgot your password?
           {' '}
           <Link to="/recover">Recover</Link>
-        </p>
+        </p> */}
       </form>
     </>
   );
