@@ -4,13 +4,17 @@ This project is as frontend application of a simple todo list. In order to work 
 
 ## Basic instructions
 
+0) Install and run backend: https://github.com/lionffl/pair-todo-backend 
+
 1) Clone this repo: `git clone git@github.com:lionffl/pair-todo-frontend.git`
 
-2) Install dependecies: `npm install`
+2) Navigate to project folder: `cd pair-todo-backend`
 
-3) Enviroment variables settings: Rename ```.env.example``` to ```.env```.
+3) Install dependencies: `npm install`
 
-4) Run: `npm start`
+4) Enviroment variables settings: Rename ```.env.example``` to ```.env```.
+
+5) Run: `npm start`
 
 React app should be now running at http://localhost:3001 (default port in .env.example)
 
