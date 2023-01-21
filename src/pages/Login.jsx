@@ -14,11 +14,11 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleChange = ({ target }) => {
-    const { value, name: option } = target;
+    const { value, name: type } = target;
     const inputs = new Map();
     inputs.set('username', () => setUsername(value));
     inputs.set('password', () => setPassword(value));
-    inputs.get(option)();
+    inputs.get(type)();
   };
 
   const handleSubmit = async (event) => {
@@ -31,7 +31,7 @@ export default function Login() {
 
     const data = await fetchUser('post', endpoint.auth.login, payload);
     if (data.login) {
-      setUser(data.username);
+      setUser(data);
       navigate('/tasks');
     } else {
       flash(data.message);

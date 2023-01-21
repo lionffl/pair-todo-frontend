@@ -7,14 +7,14 @@ export const AuthContext = React.createContext(null);
 
 // eslint-disable-next-line react/prop-types
 export default function TaskContextProvider({ children }) {
-  const [user, setUser] = React.useState('');
+  const [user, setUser] = React.useState({});
   const navigate = useNavigate();
 
   React.useEffect(() => {
     const getUser = async () => {
       const data = await fetchUser('get', endpoint.auth.loggedIn);
       if (data.login) {
-        setUser(data.username);
+        setUser({ id: data.id, username: data.username });
         navigate('/tasks');
       }
     };

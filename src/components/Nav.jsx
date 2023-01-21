@@ -3,19 +3,22 @@ import PropTypes from 'prop-types';
 import { fetchUser } from '../helpers/fetch';
 import endpoint from '../helpers/endpoints';
 import { AuthContext } from '../context/AuthContext';
+import { TaskContext } from '../context/TaskContext';
 
 export default function Nav({ user }) {
   const { setUser } = useContext(AuthContext);
+  const { setTasks } = useContext(TaskContext);
   const handleClick = async () => {
     await fetchUser('delete', endpoint.auth.logout);
-    setUser('');
+    setUser({});
+    setTasks([]);
   };
   return (
     <div className="nav-container">
       <span>
         Hello,
         {' '}
-        {user}
+        {user.username}
         !
       </span>
       <button
@@ -31,5 +34,8 @@ export default function Nav({ user }) {
 }
 
 Nav.propTypes = {
-  user: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    id: PropTypes.number,
+    username: PropTypes.string,
+  }).isRequired,
 };

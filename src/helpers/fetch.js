@@ -6,6 +6,7 @@ export const fetchTasks = async (method, url, _payload) => {
       method,
       url,
       data: _payload,
+      withCredentials: true,
     });
     return tasks.data;
   } catch (err) {

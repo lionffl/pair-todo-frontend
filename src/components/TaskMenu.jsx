@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
 import { FlashContext } from '../context/FlashContext';
+import { AuthContext } from '../context/AuthContext';
 import endpoint from '../helpers/endpoints';
 import { fetchTasks } from '../helpers/fetch';
 
@@ -9,12 +10,13 @@ export default function TaskMenu() {
 
   const { setTasks } = useContext(TaskContext);
   const { flash } = useContext(FlashContext);
+  const { user } = useContext(AuthContext);
 
   const handleChange = (event) => setInputTaskValue(event.target.value);
 
   const handleClick = async () => {
     if (inputTaskValue) {
-      const newTask = { description: inputTaskValue, completed: false };
+      const newTask = { user_id: user.id, description: inputTaskValue, completed: false };
       const data = await fetchTasks('post', endpoint.tasks, newTask);
       setTasks(data);
     } else flash('Please, provide a task description');
