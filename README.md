@@ -10,6 +10,10 @@ This project is as frontend application of a simple todo list. In order to work 
 
 3) Enviroment variables settings: Rename ```.env.example``` to ```.env```.
 
+4) Run: `npm start`
+
+React app should be now running at 3001 (default port in .env.example)
+
 ## Contributing
 
 If you'd like to contribute to the project, please follow these guidelines:
