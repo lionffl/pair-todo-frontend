@@ -20,13 +20,6 @@ If you'd like to contribute to the project, please follow these guidelines:
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request.
 
-## Next features / implementations
-
-* Add recovery account / password
-* Add task sharing option with another user
-* Add UI for better experience at desktops devices
-* Improve error handling
-
 ## Contact
 
 * lionffl@gmail.com / felipelima@geografialinks.com
