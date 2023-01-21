@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'CSRF-TOKEN';
+axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
+
 export const fetchTasks = async (method, url, _payload) => {
   try {
     const tasks = await axios({
