@@ -24,6 +24,7 @@ If you'd like to contribute to the project, please follow these guidelines:
 
 * Add recovery account / password
 * Add task sharing option with another user
+* Add UI for better experience at desktops devices
 * Improve error handling
 
 ## Contact
