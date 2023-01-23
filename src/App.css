@@ -117,7 +117,7 @@ input[type=text], input[type=password] {
   flex-direction: column;
   width: 95vw;
   height: 95vh;
-  overflow: scroll;
+  overflow: auto;
   margin: 0.5em;
 }
 
